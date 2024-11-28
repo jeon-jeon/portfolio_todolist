@@ -5,13 +5,13 @@ const Login = () => {
   const [name, SetName] = useState("");
 
   const logout = () => {
-    const visitor = prompt("이름을 입력해 주세요");
-    SetName((prev) => (visitor == "" ? "Guest" : visitor));
+    const visitor = prompt("이름을 입력해 주세요") || "Guest";
+    SetName((prev) => visitor);
   };
 
   useEffect(() => {
-    const visitor = prompt("이름을 입력해 주세요");
-    SetName((prev) => (visitor == "" ? "Guest" : visitor));
+    const visitor = prompt("이름을 입력해 주세요") || "Guest";
+    SetName((prev) => visitor);
   }, []);
 
   return (
